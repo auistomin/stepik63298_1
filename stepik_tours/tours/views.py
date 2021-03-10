@@ -1,4 +1,4 @@
-# from django.http import HttpResponseNotFound
+from django.http import HttpResponseNotFound
 from django.shortcuts import render
 
 
@@ -12,3 +12,11 @@ def departure_view(request, departure):
 
 def tour_view(request, id):
     return render(request, "tour.html")
+
+
+def custom_handler404(request, exception):
+    return HttpResponseNotFound('Ой, страница не найдена...')
+
+
+def custom_handler500(request):
+    return HttpResponseNotFound('Ой, ошибка на сервере...')

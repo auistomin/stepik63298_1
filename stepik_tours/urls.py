@@ -19,7 +19,10 @@ from django.urls import path
 from stepik_tours.tours.views import main_view
 from stepik_tours.tours.views import departure_view
 from stepik_tours.tours.views import tour_view
+from stepik_tours.tours.views import custom_handler404, custom_handler500
 
+handler404 = custom_handler404
+handler500 = custom_handler500
 
 urlpatterns = [
     path('', main_view, name='main'),
